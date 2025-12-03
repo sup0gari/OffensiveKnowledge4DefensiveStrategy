@@ -28,3 +28,17 @@ wget <URL>
 find / -perm -4000 -type f -exec ls -l {} \; 2>/dev/null # SUID検索
 find / -perm -2000 -type f -exec ls -l {} \; 2>/dev/null # SGID検索
 ```
+
+## cat EOFを使ったファイル作成
+```bash
+cat << EOF > test.sh
+#!/bin/bash
+echo "Hello World!"
+EOF
+```
+
+## 環境変数の書き換え
+```bash
+export PATH=<書き換えたいパス>
+```
+
