@@ -42,6 +42,12 @@ find <検索場所のパス> <オプション> <検索ファイル名>
 -exec <コマンド> # 検索内容に対してコマンド実行した結果を表示
 ```
 
+## SUID, SGID検索
+```bash
+find / -perm -4000 -type f -exec ls -l {} \; 2>/dev/null # SUID検索
+find / -perm -2000 -type f -exec ls -l {} \; 2>/dev/null # SGID検索
+```
+
 ## sudoers
 一般ユーザーが sudo コマンドを使用する際に、どのコマンドを、どのユーザーの権限で、パスワードなしで実行できるかを細かく定義したファイル  
 `/etc/sudoers`に通常あり、`sudo -l`で見れる。
