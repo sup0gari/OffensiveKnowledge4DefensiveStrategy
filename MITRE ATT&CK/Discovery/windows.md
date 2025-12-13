@@ -25,3 +25,11 @@ icacls <ファイルまたはディレクトリ>
 (F) # フルコントロール
 (RX) # 読み取りと実行
 ```
+
+## サービス関連
+```bash
+sc.exe start <サービス>
+sc.exe stop <サービス>
+sc.exe query <サービス> # サービスの状態
+sc.exe config <サービス> binPath="<パス>" # binPathの変更
+```
