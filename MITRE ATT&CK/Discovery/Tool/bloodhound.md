@@ -24,7 +24,7 @@ ADのレプリケーション（サーバー同士のデータの同期）を悪
 
 ## GenericAll, ForceChangePasswordを使用したパスワード変更
 ```powershell
-$SecurePass = ConvertTo-SecureString "<任意のパスワード>" -AsPlainText -Force
+$SecurePass = ConvertTo-SecureString "<任意のパスワード>" -AsPlain -Force
 Set-ADAccountPassword -Identity "<ユーザー名>" -NewPassword $SecurePass -Reset
 ```
 
