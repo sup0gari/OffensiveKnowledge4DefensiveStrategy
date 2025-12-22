@@ -4,6 +4,7 @@ Active Directory内の複雑な権限関係を可視化し、管理者権限ま�
 ## コマンド
 ```bash
 bloodhound-python -d <ドメイン> -u <ユーザー名> -p <パスワード> -ns <ターゲット> -c All # 認証済みユーザーを使用してjsonファイルを生成。このファイルをブラウザ経由でGUIにアップロードする。
+bloodhound # 起動 localhost:8080
 ```
 
 ## 特権
