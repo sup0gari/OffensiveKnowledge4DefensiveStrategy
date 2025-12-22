@@ -30,7 +30,7 @@ Set-ADAccountPassword -Identity "<ユーザー名>" -NewPassword $SecurePass -Re
 
 ## GenericWriteを使用したSPN付与
 ```powershell
-$pass = convertto-securestring "pass123" -Asplain -Force
+$pass = convertto-securestring "<GenericWrite権限のあるユーザーのパスワード>" -Asplain -Force
 $cred = new-object system.management.automation.pscredential ("<ドメイン>\<GenericWrite権限のあるユーザー>", $pass)
 Set-ADUser -Identity <SPNを付与するユーザー> -ServicePrincipalNames @{Add="<HTTP>/<なんでも>"} # webサーバーに紐づくサービスアカウントにするためのSPNの付与
 ```
