@@ -6,4 +6,5 @@ lookupsidを実行する際にrpcを使用して通信するため、匿名のrp
 ```bash
 impacket-lookupsid <ユーザー名>@<ターゲット> -no-pass
 impacket-lookupsid <ユーザー名>@<ターゲット> -no-pass | grep 'SidTypeUser' | sed 's/.*\\\(.*\) (SidTypeUser)/\1/' > users.txt # SidTypeUserだけを抜き出し、users.txtに保存。
+impacket-lookupsid <ユーザー名>:<パスワード>@<ターゲット> # 認証あり
 ```
