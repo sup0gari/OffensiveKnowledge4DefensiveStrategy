@@ -1,6 +1,14 @@
 ## TTYシェルの確立
 リバースシェルで獲得したシェルが不安定な場合、TTYシェルを確立することで安定したインタラクティブなシェルが得られる。  
-`python3 -c "import pty;pty.spawn('/bin/sh')"`
+`python3 -c "import pty;pty.spawn('/bin/sh')"`  
+python3が使えないとき
+```bash
+script /dev/null -c bash # PTYという疑似端末の割り当て
+CTRL + Z # バックグラウンド
+stty raw -echo # 端末側の文字をそのまま送るようにする。TabやCTRL + Cが使えるようになる可能性がある
+fg # foregroundの略。バックグラウンドから戻る
+export TERM=xterm
+```
 
 ## ブラウザでドメインの名前解決ができないとき
 `echo <ターゲット> <ドメイン> | sudo tee -a /etc/hosts`
