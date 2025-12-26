@@ -24,7 +24,7 @@ robocopy /b C:\Users\Administrator\Desktop\ C:\ # 管理者のデスクトップ
 # AlwaysInstallElevatedの悪用
 どのユーザーがMSIファイルをインストールしても、SYSTEM権限で実行してしまうという設定
 - `reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated`
-- `reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated`
+- `reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated`  
 上記の結果が`0x1`であれば悪用できる可能性が高い。
 
 ```bash
