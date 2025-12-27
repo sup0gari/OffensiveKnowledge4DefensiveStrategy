@@ -71,3 +71,9 @@ export PATH=<書き換えたいパス>
 
 ## 16進数をasciiに変換
 `xxd -r -p <ファイル> > <ASCII>`
+
+## sshエラー
+```bash
+no mutual signature supported # 署名ルールが一致しないときのエラー
+-o PubkeyAcceptedKeyTypes=ssh-rsa # ssh-rsa(sha1)を強制的に使用
+```
