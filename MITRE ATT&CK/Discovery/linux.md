@@ -58,3 +58,6 @@ find / -perm -2000 -type f -exec ls -l {} \; 2>/dev/null # SGID検索
 crontab -l
 cat /etc/crontab
 ```
+
+## プロセス
+`ps aux`
