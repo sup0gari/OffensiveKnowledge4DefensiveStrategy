@@ -109,4 +109,5 @@ mdb-tables <ファイル> # テーブルを表示
 mdb-schema <ファイル>
 mdb-export <ファイル> <テーブル>
 mdb-sql <ファイル> # SQLクエリを使用可能にする
+mdb-sql -d '|' -P <ファイル> # SQLクエリで見やすくパイプ区切りにする
 ```
