@@ -138,3 +138,6 @@ impacket-smbserver <共有名> $(pwd) -smb2support
 net use X: \\<Linux IP>\<共有名>
 copy/xcopy <送信ファイル> X:\<保存名> #もしくは robocopy <ディレクトリ> X:\ <送信ファイル>
 ```
+
+## attrib
+`attrib -H -S <隠しファイルなど> # 隠しとシステム属性を解除`
