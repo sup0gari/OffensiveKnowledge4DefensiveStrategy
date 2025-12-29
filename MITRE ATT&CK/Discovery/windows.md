@@ -16,7 +16,8 @@ dir /a # cmd
 ```bash
 Get-Process
 ps
-tasklist
+tasklist /v
+netstat -ano
 ```
 
 ## 権限表示
