@@ -7,5 +7,5 @@ dir /S /AS C:\Users\<ユーザー>\AppData\Local\Microsoft\Credentials
 dir /S /AS C:\Users\<ユーザー>\AppData\Local\Microsoft\Protect
 dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Vault
 dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Credentials
-dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Protect"
+dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Protect
 ```
