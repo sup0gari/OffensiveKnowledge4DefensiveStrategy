@@ -84,3 +84,9 @@ ${IFS} # スペース
 echo<base64 ペイロード>|base64 -d|bash
 echo -n <ペイロード> | base64 -d # -n入れたほうがいい
 ```
+
+## smbサーバーを立てる
+```bash
+impacket-smbserver share $(pwd) -smb2support -user <ユーザー> -password <パスワード> # 認証あり
+impacket-smbserver share $(pwd) -smb2support # 認証なし
+```
