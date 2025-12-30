@@ -7,4 +7,5 @@ SMB(445)が有効であればWinRMが有効でなくても使用できること�
 ```bash
 impacket-psexec 'administrator:<パスワード>@<ターゲット>'
 impacket-psexec administrator:'<パスワード>'@<ターゲット>
+impacket-psexec administrator@<ターゲット> -hashes <NTLMハッシュ>
 ```
