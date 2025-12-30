@@ -38,6 +38,13 @@ sc.exe qc <サービス> # サービス詳細確認
 ```
 
 ## Active Directory関連
-```bash
+```powershell
 Get-ADUser -Filter {ServicePrincipalName -ne "$null"} -Properties ServicePrincipalName | Select Name, ServicePrincipalName # SPNを持つユーザー列挙
+```
+
+## Autologon
+サービスアカウントなど、人間が常に操作しないアカウントが自動ログインするのに使われる。  
+下記コマンドで確認可能。
+```powershell
+reg query "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /s | findstr "AutoAdminLogon DefaultUserName DefaultPassword DefaultDomainName"
 ```
