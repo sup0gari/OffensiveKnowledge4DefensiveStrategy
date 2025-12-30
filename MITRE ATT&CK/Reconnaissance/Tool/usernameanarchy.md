@@ -12,4 +12,5 @@ username-anarchy --input-file <ユーザーリスト> --select-format first, fla
 # taro
 # taro.tanaka
 # tarot
+# ttanaka
 ```
