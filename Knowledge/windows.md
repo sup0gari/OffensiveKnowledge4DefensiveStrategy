@@ -87,6 +87,7 @@ impacket-secretsdump -sam sam -system system local
 # robocopyを使用した管理者フォルダのコピー
 robocopy /b C:\Users\Administrator\Desktop\ C:\
 ```
+`SeLoadDriverPrivilege` 新しいデバイスドライバーをカーネルメモリにロードする特権。BYOVDにつながる。
 
 ## グループ
 ```bash
