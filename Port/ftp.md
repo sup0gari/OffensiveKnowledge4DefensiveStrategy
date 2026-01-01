@@ -34,3 +34,6 @@ Remote system type is UNIX.
 Using binary mode to transfer files.
 ftp> 
 ```
+
+## URL指定
+`ftp://[ユーザー名]:[パスワード]@[ホスト名またはIP]:[ポート番号]/[ファイルパス]`
