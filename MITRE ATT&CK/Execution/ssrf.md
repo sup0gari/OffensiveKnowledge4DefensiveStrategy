@@ -5,7 +5,7 @@ Webアプリケーションの脆弱性を悪用し、攻撃者が意図しな�
 Webサーバーから攻撃者へ疎通可能な前提で、攻撃者のサーバーを経由し、302で再度ターゲットにリダイレクトすることによりブラックリストを迂回する方法。
 ```bash
 cat << EOF > res
-HTTP/1.1 302 Moved Permanently
+HTTP/1.1 301 Moved Permanently
 Location: <リダイレクト先のターゲットサーバー>
 Content-Length: 0
 EOF
