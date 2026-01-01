@@ -92,6 +92,7 @@ robocopy /b C:\Users\Administrator\Desktop\ C:\
 ## グループ
 ```bash
 Server Operators # Windows ServerやActive Directory環境において、サーバーの運用管理に関する一定の権限を持つ、組み込みの特殊なセキュリティグループ。サービスを利用して権限昇格の可能性あり。
+DnsAdmins # Active Directoryにデフォルトで存在する組み込みグループでDNSサーバーの設定を変更することで任意のDLLを読み込ませるDLLインジェクションが可能。
 ```
 
 ## ETWとは
