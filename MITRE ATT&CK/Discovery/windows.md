@@ -10,11 +10,13 @@ cmdkey /list # 保存された資格情報を表示
 ```bash
 Get-ChildItem -Force # すべてのファイルを表示
 dir /a # cmd
+dir -force
 ```
 
 ## プロセス情報表示
 ```bash
 Get-Process
+Get-Process -name <プロセス>
 ps
 tasklist /v
 netstat -ano
