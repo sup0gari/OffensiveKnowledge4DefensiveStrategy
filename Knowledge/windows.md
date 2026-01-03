@@ -93,6 +93,7 @@ robocopy /b C:\Users\Administrator\Desktop\ C:\
 ```bash
 Server Operators # Windows ServerやActive Directory環境において、サーバーの運用管理に関する一定の権限を持つ、組み込みの特殊なセキュリティグループ。サービスを利用して権限昇格の可能性あり。
 DnsAdmins # Active Directoryにデフォルトで存在する組み込みグループでDNSサーバーの設定を変更することで任意のDLLを読み込ませるDLLインジェクションが可能。
+Exchange Windows Permissions # Microsoft Exchangeをインストールした際に自動的に作成され、Active Directory内のユーザーオブジェクトに対して、必要な権限を付与するためのグループ。
 ```
 
 ## ServerOperatorsの悪用による権限昇格
