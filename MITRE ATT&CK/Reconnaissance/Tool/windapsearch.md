@@ -5,6 +5,7 @@ Windowsドメイン内のユーザー、グループ、コンピュータ情報�
 ```bash
 windapsearch -d <ドメイン> --dc-ip <ターゲット> -U # 匿名バインド
 windapsearch -d <ドメイン> --dc-ip <ターゲット> -U --custom "classObject=*"
+windapsearch -d <ドメイン> --dc-ip <ターゲット> -U --custom "objectClass=*"
 windapsearch -d <ドメイン> --dc-ip <ターゲット> -U --admin-objects
 windapsearch -m "Remote Management Users" -d<ドメイン> --dc-ip <ターゲット> -U # WinRMグループ検索
 windapsearch -d <ドメイン> --dc-ip <ターゲット> -U --full
