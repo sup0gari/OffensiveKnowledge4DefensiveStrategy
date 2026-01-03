@@ -5,4 +5,5 @@
 ```bash
 hashcat -m 3200 <ファイル> <ワードリスト> # bcrypt
 hashcat -a 0 -m 5200 <ファイル> <ワードリスト> # psafe3
+hashcat -a 0 -m 18200 <ファイル> <ワードリスト>
 ```
